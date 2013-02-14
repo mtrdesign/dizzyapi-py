@@ -1,4 +1,4 @@
 dizzyapi-py
 ===========
 
-Python client for the DizzyJam.com API
+Python client for the Dizzyjam API, http://www.dizzyjam.com/apidoc/
