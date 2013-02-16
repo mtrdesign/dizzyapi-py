@@ -1,6 +1,5 @@
 dizzyapi-py
 ===========
-
 This library provides a Python client for the [DizzyJam.com API](http://www.dizzyjam.com/apidoc/). The _catalogue/_ group of calls is public, and can be used without authentication; all other calls require valid _AuthID_ and _API Key_. Information on obtaining these credentials can be found in the [API Docs](http://www.dizzyjam.com/apidoc/).
 
 This library supports both JSON and XML as API outputs.
@@ -33,7 +32,3 @@ The full list of calls supported by the API, along with their arguments and
 sample output can be found at http://www.dizzyjam.com/apidoc/. To get the 
 corresponding library method name, simply prefix the call name with 'dj_' and 
 replace '/' with '_' (e.g. _catalogue/store_info_ -> _dj_catalogue_store_info()_)
-
- 
-
-
