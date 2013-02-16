@@ -25,7 +25,7 @@ my_stores = json_conn.dj_manage_my_stores() # Result would still be a dict
 # Method names stay the same between JSON and XML connections
 # API results are returned as ElementTrees (xml.etree.ElementTree)
 xml_conn = XMLAPIConn()
-store_info = xml_conn.dj_catalogue_store_info ('dizzyjam') # Result would be
+store_info = xml_conn.dj_catalogue_store_info ('dizzyjam')
 ```
 ## More info
 The full list of calls supported by the API, along with their arguments and 
