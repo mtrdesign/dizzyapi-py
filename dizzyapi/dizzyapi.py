@@ -154,7 +154,7 @@ class _APIConn (object):
 
     def process_result(self, result):
         """
-        Must be overridden vy the format-specific implementation.
+        Must be overridden by the format-specific implementation.
         """
         raise NotImplementedError
 
