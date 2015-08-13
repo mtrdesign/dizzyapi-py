@@ -214,9 +214,19 @@ class _APIConn (object):
         api_args.update (self._itemdict(items))
         return self.call_auth (method, api_args)
 
+    def dj_manage_upload_design (self, store_id, design_file = None):
+        """
+        Upload a new design under the given Store
+        """
+
+        method = 'manage/upload_design'
+        api_args = subdict (['store_id','design_file'],
+                            locals())
+        return self.call_auth (method, api_args)
+
     def dj_manage_create_product (self, store_id, product_type_id, process, name, colours = None,
                                   featured_colour = None, design_id = None, design_file = None,
-                                  scale = None, horiz = None, vert = None):
+                                  scale = None, angle = None, horiz = None, vert = None):
         """
         Creates a new product under the given Store
         """
@@ -224,7 +234,7 @@ class _APIConn (object):
         method = 'manage/create_product'
         api_args = subdict (['store_id', 'product_type_id','process','name', 'colours',
                              'featured_colour', 'design_id','design_file', 'scale',
-                             'horiz', 'vert'],
+                             'angle', 'horiz', 'vert'],
                             locals())
         return self.call_auth (method, api_args)
 
