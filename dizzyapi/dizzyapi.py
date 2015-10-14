@@ -166,12 +166,12 @@ class _APIConn (object):
         api_args = subdict (['count', 'start'], locals())
         return self.call_raw (method, api_args)
 
-    def dj_catalogue_store_info(self, store_id, country = None, count = None, start = None):
+    def dj_catalogue_store_info(self, store_id, country = None, embed_settings = None, count = None, start = None):
         """
         Details about a store, including the available products.
         """
         method = 'catalogue/store_info'
-        api_args = subdict (['store_id','country','count', 'start'], locals())
+        api_args = subdict (['store_id','country','embed_settings','count', 'start'], locals())
         return self.call_raw (method, api_args)
 
     def dj_catalogue_product_info (self, product_id, country = None):
@@ -246,6 +246,14 @@ class _APIConn (object):
         api_args = subdict (['product_id'],locals())
         return self.call_auth (method, api_args)
 
+    def dj_manage_delete_design (self, design_id):
+        """
+        Deletes the provided product.
+        """
+        method = 'manage/delete_design'
+        api_args = subdict (['design_id'],locals())
+        return self.call_auth (method, api_args)
+
 
     def dj_manage_product_options (self, store_id):
         """
@@ -263,7 +271,7 @@ class _APIConn (object):
         return self.call_auth (method, {})
 
     def dj_manage_create_store (self, store_id, name, description = None, logo_file = None,
-                                genres = None, website = None, myspace_url = None,
+                                embed_shop = None, genres = None, website = None, myspace_url = None,
                                 facebook_url = None, twitter_id = None,
                                 rss_feed_url = None, user_id = None):
         """
@@ -271,12 +279,12 @@ class _APIConn (object):
         """
         method = 'manage/create_store'
         api_args = subdict (['store_id','name', 'description', 'logo_file',
-                            'genres', 'website', 'myspace_url', 'facebook_url',
+                            'genres', 'embed_shop', 'website', 'myspace_url', 'facebook_url',
                             'twitter_id', 'rss_feed_url', 'user_id'], locals())
         return self.call_auth (method, api_args)
 
     def dj_manage_edit_store (self, store_id, name, description = None, logo_file = None,
-                                genres = None, website = None, myspace_url = None,
+                                embed_shop = None, genres = None, website = None, myspace_url = None,
                                 facebook_url = None, twitter_id = None, rss_feed_url = None,
                                 clear = None):
         """
@@ -284,7 +292,7 @@ class _APIConn (object):
         """
         method = 'manage/edit_store'
         api_args = subdict (['store_id','name', 'description', 'logo_file',
-                            'genres', 'website', 'myspace_url', 'facebook_url',
+                            'embed_shop', 'genres', 'website', 'myspace_url', 'facebook_url',
                             'twitter_id', 'rss_feed_url', 'clear'], locals())
         return self.call_auth (method, api_args)
 
